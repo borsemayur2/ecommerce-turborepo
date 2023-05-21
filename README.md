@@ -1,14 +1,24 @@
-# Turborepo kitchen sink starter
+# Ecommerce Microservices and Frontend App
 
-This is an official starter Turborepo with multiple meta-frameworks all working in harmony and sharing packages.
+Created using Turborepo with multiple meta-frameworks all working in harmony and sharing packages.
 
-## Using this example
+## Get started
 
-Run the following command:
+> Set variables in `.env` file (refer `.env.example`)
+
+### Install all packages
 
 ```sh
-npx create-turbo@latest -e kitchen-sink
+pnpm install
 ```
+
+### Run all the workspaces concurrently:
+
+```sh
+pnpm dev
+```
+
+This will run microservices at ports `8001`, `8002`, `8003` and the frontend at port `3000`
 
 ## What's inside?
 
@@ -16,16 +26,15 @@ This Turborepo includes the following packages and apps:
 
 ### Apps and Packages
 
-- `api`: an [Express](https://expressjs.com/) server
-- `storefront`: a [Next.js](https://nextjs.org/) app
-- `admin`: a [Vite](https://vitejs.dev/) single page app
-- `blog`: a [Remix](https://remix.run/) blog
+- `auth-service`: authentication microservice
+- `product-service`: product microservice
+- `order-service`: order microservice
+- `storefront`: Frontend App created using Next.js
 - `logger`: isomorphic logger (a small wrapper around console.log)
 - `ui`: a dummy React UI library (which contains a single `<CounterButton>` component)
+- `api-utils`: Shared utilities for the microservices
 - `scripts`: Jest and ESLint configurations
 - `tsconfig`: tsconfig.json;s used throughout the monorepo
-
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Utilities
 
